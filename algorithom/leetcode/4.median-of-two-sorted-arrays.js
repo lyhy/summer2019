@@ -11,6 +11,7 @@
  * @return {number}
  */
 var findMedianSortedArrays = function(nums1, nums2) {
+    debugger;
     var len1 = nums1.length, len2 = nums2.length, total = len1 + len2, isEven = total% 2 === 0;
     var thresh = Math.floor(total / 2);
     var p1 = 0, p2 = 0, counter = 0, prev, curr;

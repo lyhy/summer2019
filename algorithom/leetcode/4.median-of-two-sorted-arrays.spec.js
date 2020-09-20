@@ -1,4 +1,5 @@
 describe("Filter function", () => {
+    debugger;
     var nums1 = [2];
     var nums2 = [1];
     var findMedianSortedArrays = require('./4.median-of-two-sorted-arrays');
