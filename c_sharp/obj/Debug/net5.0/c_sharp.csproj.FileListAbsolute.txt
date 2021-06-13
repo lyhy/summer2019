@@ -1,0 +1,15 @@
+/Users/juwang/work/projects/summer2019/c_sharp/bin/Debug/net5.0/c_sharp.deps.json
+/Users/juwang/work/projects/summer2019/c_sharp/bin/Debug/net5.0/c_sharp.runtimeconfig.json
+/Users/juwang/work/projects/summer2019/c_sharp/bin/Debug/net5.0/c_sharp.runtimeconfig.dev.json
+/Users/juwang/work/projects/summer2019/c_sharp/bin/Debug/net5.0/c_sharp.dll
+/Users/juwang/work/projects/summer2019/c_sharp/bin/Debug/net5.0/ref/c_sharp.dll
+/Users/juwang/work/projects/summer2019/c_sharp/bin/Debug/net5.0/c_sharp.pdb
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.csproj.AssemblyReference.cache
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.AssemblyInfoInputs.cache
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.AssemblyInfo.cs
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.csproj.CoreCompileInputs.cache
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.dll
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/ref/c_sharp.dll
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.pdb
+/Users/juwang/work/projects/summer2019/c_sharp/obj/Debug/net5.0/c_sharp.genruntimeconfig.cache

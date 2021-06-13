@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//function create 2 internal vars: argument and this
+		//argument is array like object to save the passed in variables
+		//this point to the context, the caller
+
+		function a(a,b) {
+			console.log(arguments);
+		}
+		a(1,2,3,4)
+
+		function eat() {
+			console.log(this)
+		}
+
+		let objA = {
+			name: 'a',
+			eat: eat,
+			eatObj: {
+				eat: eat
+			}
+		}
+
+		eat();//window
+		objA.eat();//objA
+		objA.eatObj.eat();//objA.eachObj
+
+
+	</script>
+</body>
+</html>

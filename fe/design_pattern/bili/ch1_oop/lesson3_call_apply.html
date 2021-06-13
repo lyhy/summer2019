@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//all or apply will dynamically pass in the this context
+
+		function eat() {
+			console.log(this)
+		}
+
+		let objA = {
+			name: 'a',
+			eat: eat,
+			eatObj: {
+				eat: eat
+			}
+		}
+
+		eat();//window
+		objA.eat();//objA
+
+		eat.call(objA);//objA
+		objA.eat.apply(window);//window
+
+		let objB = {
+
+		}
+
+		function b(name, age) {
+			this.name = name;
+			this.age = age
+		}
+
+		b.call(objB, 'objB', 40)
+		console.log(objB.name, objB.age);
+
+		b.apply(window, ['windowObj', 30])
+		console.log(window.name, window.age);
+	</script>
+</body>
+</html>

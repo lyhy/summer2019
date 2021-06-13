@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//multiple object
+		// var a = {
+		// 	name: 'a',
+		// 	eat: function() {
+		// 		console.log(`${a.name} eat`)
+		// 	}
+		// }
+		// var b = {
+		// 	name: 'b',
+		// 	eat: function() {
+		// 		console.log(`${b.name} eat`)
+		// 	}
+		// }
+
+		// a.eat();
+		// b.eat();
+
+		//encapsulate
+		//factory
+		// function createCat(name) {
+		// 	let obj = {};
+		// 	obj.name = name;
+		// 	obj.eat = function() {
+		// 		console.log(`${name} eat`);
+		// 	}
+		// 	return obj;
+		// }
+
+		// let a = createCat('a');
+		// let b = createCat('b');
+		// a.eat();
+		// b.eat();
+
+		//oop
+		function createCat(name) {
+			this.name = name;
+			this.eat = function() {
+				console.log(`${this.name} eat`);	
+			}
+		}	
+		let a = new createCat('a');
+		let b = new createCat('b');
+		a.eat();
+		b.eat();
+
+	</script>
+</body>
+</html>
