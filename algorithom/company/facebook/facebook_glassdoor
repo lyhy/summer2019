@@ -1,0 +1,191 @@
+Given two Identical DOM tress A and B, check if a Node in A also exists in B
+--
+const findCorrespondingNode = (rootA, rootB, target) => {
+// your code here
+let directions = []
+
+let found = false
+function findNode(root, target, track){
+if(!root) return
+
+if(root === target){
+directions = [...track]
+found = true
+return
+}
+
+for(let i= 0; i
+<div>
+<div>
+<div></div>
+</div>
+<div>
+</div>
+<div>
+<div>
+<p></p>
+</div>
+</div>
+<div>
+</div>`
+
+
+const B = A.cloneNode(true)
+const node1 = A.querySelector('#node1')
+const node2 = A.querySelector('#node2')
+const node1Target = B.querySelector('#node1')
+const node2Target = B.querySelector('#node2')
+
+console.log(findCorrespondingNode(A, B, node1Target))</div>
+==
+It was a tree traversal question. Given a tree with specific nodes to visit, traverse another tree with the same structure and visit the nodes in same positions.
+what is 'this', what is closure, var vs const vs let, DOM tree
+Basic graph algo & DS style whiteboarding question
+==
+Basic JS questions about closure, map funciton, forEach function, apply function, call function, DOM tree, difference between array and object.
+You are given an array of N elements in the form "property1: value1; property2: value2;...;propertyX: valueX;" for some some N and any X. There is also another array of M elements of the form "property: value". You are supposed to write an algorithm to remove every element in the N length array that has a "property: value" pair in the M length array.
+
+The trick is that the most intuitive solution of iterating through the M array and filtering the N array at each element is already written. You must come up with a solution that solves the problem in less than O(NM) time.
+--
+answer1
+1. Sort array N by property name O(nlogn);
+2. Iterate M and perform binary search on array N to remove. O(mlogn)
+
+You get O(2mlogn) by the end, which is still faster than O(mn)
+--
+answer2
+1st array = [
+{ car: "honda", "name": "John"},
+{ car: "bmw", "name": "Johnny", "os": "ios"},
+{ car: "toyota", "name": "JohnX", "os": "android"},
+]
+2nd array = [{
+"car":"honda"
+}, {
+"os": "android"
+}];
+
+As per the 1st post - create a map of the 2nd array - so it'll be O(1) lookup time, although a new space of O(M).
+
+I can't think of any other way besides filtering through the entire 1st array. So, if that 2nd array has N objects with max of X key, value pairs - just iterating through them will be O(NX).
+
+Qn for 2nd poster - how do you sort the 1st array?
+==
+
+Flatten Array, Create Emitter,optimize a function, implement a simple Observable.
+--
+Write an emitter class:
+/*
+emitter = new Emitter();
+
+// 1. Support subscribing to events.
+sub = emitter.subscribe('event_name', callback);
+sub2 = emitter.subscribe('event_name', callback2);
+
+// 2. Support emitting events.
+// This particular example should lead to the `callback` above being invoked with `foo` and `bar` as parameters.
+emitter.emit('event_name', foo, bar);
+
+// 3. Support unsubscribing existing subscriptions by releasing them.
+sub.release(); // `sub` is the reference returned by `subscribe` above
+
+--
+function Emitter() {
+this.events = new Map();
+}
+
+Emitter.prototype.subscribe = function(evtName, callback) {
+
+this.events.set(evtName, callback);
+const self = this;
+
+return {
+release: function() {
+self.events.delete(evtName);
+}
+};
+}
+
+Emitter.prototype.emit = function(evtName, ...params) {
+if (this.events.has(evtName)) {
+const event = this.events.get(evtName);
+event.call(this, ...params);
+}
+}
+
+const emitter = new Emitter();
+
+const sub1 = emitter.subscribe('click', (param) => console.log(param));
+emitter.emit('click', 'hey1');
+emitter.emit('click', 'hey2');
+emitter.emit('click', 'hey3');
+emitter.emit('click', 'hey4');
+sub1.release();
+emitter.emit('click', 'hey5');
+emitter.emit('click', 'hey7');
+emitter.emit('click', 'hey9');
+emitter.emit('click', 'hey11');
+==
+Implement a simple store class with set(Node, value), get(Node) and has(Node) methods, which store a given Nodes with corresponding values.
+--
+The way I interpret what you have written, it just sounds like they are asking for an ES6 Map? ES6 Maps can have objects as keys, so you can use the Node as the key.
+
+If you had to code it from scratch without the use of an ES6 Map, something like:
+
+class CachedNode {
+constructor(node, value) {
+this._node = node;
+this._value = value;
+}
+
+getNode() {
+return this._node;
+}
+
+getValue() {
+return this._value;
+}
+
+setValue(value) {
+this._value = value;
+return this;
+}
+}
+
+class SimpleStore {
+constructor() {
+this._container = [];
+}
+
+set(node, value) {
+let cachedNode;
+if (this.has(node)) {
+cachedNode = this.get(node);
+cachedNode.setValue(value);
+} else {
+cachedNode = new CachedNode(node, value);
+this._container.push(cachedNode);
+}
+
+return this;
+}
+
+// you might want to change this method so it returns the Node's value not the CachedNode.
+// If you did, that would mean adding another method to get the CachedNode. Easy enough.
+get(node) {
+return this._container.find((cachedNode) => {
+return cachedNode.getNode() === node;
+});
+}
+
+has(node) {
+return !!this.get(node);
+}
+}
+
+If it needed to store multiple values against a node, then just change the single value for a Set or Array.
+==
+Explain the concept of ES6 Promises to a 5-year-old.
+What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays?
+
+
