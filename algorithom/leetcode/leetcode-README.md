@@ -49,6 +49,7 @@ Then run it, cursor should stop at the break point for testing.
 
 ## leetcode cli commands
 [https://github.com/skygragon/leetcode-cli](https://github.com/skygragon/leetcode-cli)
+[https://skygragon.github.io/leetcode-cli/commands.html#show](https://skygragon.github.io/leetcode-cli/commands.html#show)
 ###
 Read help first                         $ leetcode help
 Login with your leetcode account        $ leetcode user -l
