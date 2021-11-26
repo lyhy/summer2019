@@ -1,7 +1,7 @@
 # Unit testing
 ## install jest
 `npm install jest -g`
-## create jest.config.js under the root folder of project
+## create jest.config.js under the root folder of project (already created under leetcode folder)
 `module.exports = { verbose: true };`
 ## Add export in original js file
 `module.exports = findMedianSortedArrays;`
@@ -13,8 +13,27 @@
 ## click debug button inside of spec.js file
 It should stop at your breakpoint inside of VScode
 _disableOptimisticBPs=true in vscode-jest-tests config.
+relativeFile is used to test current active spec file, you just need to open the spec file you want to test, then click debug
+```Sample vscode config
+{
+            "type": "node",
+            "name": "vscode-jest-tests",
+            "request": "launch",
+            "program": "/usr/local/bin/jest",
+            "args": [
+                "--runTestsByPath",
+                "${relativeFile}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "_disableOptimisticBPs": true
+        },
+
+```
 ##manually run
 bash-3.2$  env CI=vscode-jest-tests /usr/local/bin/node --inspect-brk=25891 node_modules/jest/bin/jest.js --runInBand 4.median-of-two-sorted-arrays.spec.js --testNamePattern findMedianSortedArrays 
+
 
 
 node --inspect /usr/local/bin/jest --runInBand 4.median-of-two-sorted-arrays.spec.js 
@@ -34,7 +53,7 @@ Then run it, cursor should stop at the break point for testing.
 Read help first                         $ leetcode help
 Login with your leetcode account        $ leetcode user -l
 Browse all questions                    $ leetcode list
-Choose one question                     $ leetcode show 1 -g -l cpp
+Choose one question                     $ leetcode show 1 -g -x -l javascript
 Coding it!
 Run test(s) and pray...                 $ leetcode test ./two-sum.cpp -t '[3,2,4]\n7'
 Submit final solution!                  $ leetcode submit ./two-sum.cpp
