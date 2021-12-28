@@ -1,29 +1,4 @@
-.icon {
-  width:20px;
-  text-align: center;
-  padding-left: 5px;
-  padding-right: 2px;
-  border:none;
-  vertical-align: middle;
-}
+@import 'common.scss';
+@import 'au-fa-input-default-theme.scss';
+@import 'au-fa-input-red-theme.scss';
 
-:host {
-  border-width:1px;
-  border-style: solid;
-  padding: 1px 0;
-  padding-bottom: 1px;
-  display: inline-block;
-  background: white;
-}
-:host(.input-focus) {
-  border-color: #4D90FE;
-  -webkit-box-shadow: 0px 0px 5px  #4D90FE;
-  box-shadow: 0px 0px 5px  #4D90FE;
-}
-::ng-deep input {
-  border: none;
-  outline: none;
-  height: 100%;
-  box-sizing: border-box;
-
-}
