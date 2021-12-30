@@ -1,0 +1,16 @@
+<app-life-circle-all-child [value]="value" *ngIf="hasChild"></app-life-circle-all-child>
+<div>
+  count: {{count}}
+  <button (click)="count = count +1">add count</button>
+</div>
+<button (click)="hasChild = false">unload child</button>
+<button (click)="hasChild = true">load child</button>
+<button (click)="value = 'new value'">update child input value</button>
+<button (click)="other='something'">other change</button>
+
+<div>
+  <a href="https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4" target="_blank">https://netbasal.com/a-comprehensive-guide-to-angular-onpush-change-detection-strategy-5bac493074a4</a>
+  <a href="https://www.tektutorialshub.com/angular/afterviewinit-afterviewchecked-aftercontentinit-aftercontentchecked-in-angular/" target="_blank">https://www.tektutorialshub.com/angular/afterviewinit-afterviewchecked-aftercontentinit-aftercontentchecked-in-angular/</a>
+</div>
+
+

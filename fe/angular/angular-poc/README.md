@@ -26,5 +26,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## My comment
-### Angular PoC hold all the project of angular using the same application for learning angular concept in demos
+# My comment
+## Angular PoC hold all the project of angular using the same application for learning angular concept in demos
+## Generate new demo
+``` 
+ng g m --name=onboarding/payment --module=onboarding/onboarding-routing --route=payment --routing
+```
