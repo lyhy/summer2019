@@ -33,4 +33,8 @@ npx webpack --stats detailed
 
 //eslint
 npm install eslint --save-dev
+
+mode: 'none', 'development', 'production'
+development has better debug
+npm run dev   //dev script without css min, and js min to speed up
 ```
