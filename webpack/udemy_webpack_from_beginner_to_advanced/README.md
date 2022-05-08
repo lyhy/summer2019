@@ -27,6 +27,10 @@ npx webpack --stats detailed
 	image file will be bundled into a new file, and src will add full path to it (same as publicPath: 'auto') the default setting
 	publicPath: './dist', the relative path is more convenient
 
+//loader
 
 
+
+//eslint
+npm install eslint --save-dev
 ```
