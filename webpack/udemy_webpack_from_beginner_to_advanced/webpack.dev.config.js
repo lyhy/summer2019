@@ -3,13 +3,26 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		'hello-world': './src/hello-world.js',
+		'kiwi': './src/kiwi.js',
+	},
 	output: {
-		filename: 'bundle.[contenthash].js',
+		filename: '[name].[contenthash].js',
 		path: path.resolve(__dirname, './dist'),
 		publicPath: ''
 	},
 	mode: 'development',
+	devServer: {
+		port: 9000,
+		static: {
+		  directory: path.resolve(__dirname, './dist')	
+		},
+		devMiddleware: {
+			index: 'index.html',
+			writeToDisk: true
+		}
+	},
 	module: {
 		rules: [
 			{

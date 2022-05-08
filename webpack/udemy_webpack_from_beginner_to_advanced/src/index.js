@@ -1,6 +1,7 @@
 // import addImage from './add-image';
 import HelloWorldButton from './components/hello-world-button/hello-world-button';
 import Heading from './components/heading/heading.js';
+import KiwiImage from './components/kiwi-image/kiwi-image';
 const heading = new Heading();
 heading.render();
 
@@ -14,4 +15,4 @@ if(process.env.NODE_ENV === 'production') {
 	console.log('p')
 }
 
-helloWorldButton.erroFunc();
+// helloWorldButton.erroFunc();
