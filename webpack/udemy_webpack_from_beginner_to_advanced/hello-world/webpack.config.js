@@ -3,16 +3,14 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-	entry: {
-		'hello-world': './src/hello-world.js',
-		'kiwi': './src/kiwi.js',
-	},
+	entry: './src/hello-world.js',
 	output: {
 		filename: '[name].[contenthash].js',
 		path: path.resolve(__dirname, './dist'),
-		publicPath: '/static/'
+		publicPath: 'http://localhost:9001/'
 	},
 	// mode: 'production',
 	mode: 'development',
@@ -82,17 +80,16 @@ module.exports = {
 // })
 	new HtmlWebpackPlugin({
 		filename: 'hello-world.html',
-		chunks: ['hello-world'],
 		title: 'Hello world',
 		template: 'src/page-template.hbs',
 		minify: false
 	}),
-	new HtmlWebpackPlugin({
-		filename: 'kiwi.html',
-		chunks: ['kiwi'],
-		template: 'src/page-template.hbs',
-		title: 'Kiwi',
-		minify: false
+	new ModuleFederationPlugin({
+		name: 'HelloWorldApp',
+		filename: 'remoteEntry.js',
+		exposes: {
+			'./HelloWorldButton': './src/components/hello-world-button/hello-world-button.js'
+		}
 	})
 ]
 }

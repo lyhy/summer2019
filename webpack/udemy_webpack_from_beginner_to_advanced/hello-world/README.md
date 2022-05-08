@@ -7,7 +7,7 @@ npm init -y  //to create package.json
 npm install webpack webpack-cli --save-dev //install webpack core and command script
 npx webpack //remove multiple js, add export, import, to let webpack hadle all
 npx webpack --stats detailed
-//create weback.config.js with entry, output using path for relative path
+//create webpack.config.js with entry, output using path for relative path
 //"build": "webpack" in package.json
 //in webpack.config.js, module.rules array to have differnt rule
 //asset/resource rule to load static resource as external file
@@ -40,3 +40,5 @@ npm run dev   //dev script without css min, and js min to speed up
 
 writeToDisk: true// default is to write file in memory, dist folder is empty
 ```
+# new tool
+https://paloaltonetworks.udemy.com/course/parcel-bundler-the-complete-tutorial/
