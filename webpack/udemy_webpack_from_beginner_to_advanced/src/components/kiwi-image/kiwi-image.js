@@ -7,7 +7,7 @@ class KiwiImage {
 		img.alt = 'Kiwi';
 		img.classList.add('kiwi-image');
 
-		const body = document.createElement('body');
+		const body = document.querySelector('body');
 		body.appendChild(img);
 	}
 }

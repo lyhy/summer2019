@@ -8,7 +8,7 @@ module.exports = {
 		'kiwi': './src/kiwi.js',
 	},
 	output: {
-		filename: '[name].[contenthash].js',
+		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, './dist'),
 		publicPath: ''
 	},
@@ -72,11 +72,19 @@ module.exports = {
 				path.join(process.cwd(), 'build/**/*')
 		]
 }),
-// new HtmlWebpackPlugin({
-// 	title: 'Hello world',
-// 	template: 'src/index.hbs',
-// 	description: 'Some description'
-// })
-new HtmlWebpackPlugin()
+new HtmlWebpackPlugin({
+	filename: 'hello-world.html',
+	chunks: ['hello-world'],
+	title: 'Hello world',
+	template: 'src/index.hbs',
+	minify: false
+}),
+new HtmlWebpackPlugin({
+	filename: 'kiwi.html',
+	chunks: ['kiwi'],
+	template: 'src/page-template.hbs',
+	title: 'Kiwi',
+	minify: false
+})
 ]
 }

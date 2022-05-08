@@ -14,10 +14,12 @@ module.exports = {
 		path: path.resolve(__dirname, './dist'),
 		publicPath: ''
 	},
-	mode: 'production',
+	// mode: 'production',
+	mode: 'development',
 	optimization: {
 		splitChunks: {
-			chunks: 'all'
+			chunks: 'all',
+			minSize: 3000
 		}
 	},
 	module: {
@@ -80,13 +82,15 @@ module.exports = {
 // })
 	new HtmlWebpackPlugin({
 		filename: 'hello-world.html',
-		drunks: ['hello-world'],
+		chunks: ['hello-world'],
 		title: 'Hello world',
+		template: 'src/page-template.hbs',
 		minify: false
 	}),
 	new HtmlWebpackPlugin({
 		filename: 'kiwi.html',
-		drunks: ['kiwi'],
+		chunks: ['kiwi'],
+		template: 'src/page-template.hbs',
 		title: 'Kiwi',
 		minify: false
 	})
