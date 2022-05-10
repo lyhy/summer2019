@@ -11,9 +11,9 @@ const kiwiImage = new KiwiImage();
 console.log('kiwi image render')
 kiwiImage.render();
 
-import('HelloWorldApp/HelloWorldButton')
-.then((HelloWorldModule) => {
-	const HelloWorlButton = HelloWorldModule.default;
-	const helloWorlButton = new HelloWorlButton();
-	helloWorlButton.render()	
-})
+// import('HelloWorldApp/HelloWorldButton')
+// .then((HelloWorldModule) => {
+// 	const HelloWorlButton = HelloWorldModule.default;
+// 	const helloWorlButton = new HelloWorlButton();
+// 	helloWorlButton.render()	
+// })
