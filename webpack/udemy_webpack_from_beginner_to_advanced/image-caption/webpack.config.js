@@ -6,11 +6,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-	entry: './src/kiwi.js',
+	entry: './src/image-caption.js',
 	output: {
 		filename: '[name].[contenthash].js',
 		path: path.resolve(__dirname, './dist'),
-		publicPath: 'http://localhost:9002/'
+		publicPath: 'http://localhost:9003/'
 	},
 	// mode: 'production',
 	mode: 'development',
@@ -78,22 +78,18 @@ module.exports = {
 // 	template: 'src/index.hbs',
 // 	description: 'Some description'
 // })
-
 	new HtmlWebpackPlugin({
-		filename: 'kiwi.html',
+		filename: 'image-caption.html',
+		title: 'ImageCaption',
 		template: 'src/page-template.hbs',
-		title: 'Kiwi',
 		minify: false
 	}),
 	new ModuleFederationPlugin({
-		name: 'KiwiApp',
+		name: 'ImageCaptionApp',
 		filename: 'remoteEntry.js',
 		exposes: {
-			'./KiwiPage': './src/components/kiwi-page/kiwi-page.js'
-		},
-		remotes: {
-			ImageCaptionApp: 'ImageCaptionApp@http://localhost:9003/remoteEntry.js'
-	}
+			'./ImageCaption': './src/components/image-caption/image-caption.js',
+		}
 	})
 ]
 }

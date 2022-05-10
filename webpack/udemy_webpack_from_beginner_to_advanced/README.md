@@ -1,6 +1,10 @@
 # Udemy class
 https://paloaltonetworks.udemy.com/course/webpack-from-beginner-to-advanced/learn/lecture/10916988#overview
 
+# repo
+https://github.com/vp-online-courses/webpack-tutorial
+
+
 # npm init
 ```shell
 npm init -y  //to create package.json
