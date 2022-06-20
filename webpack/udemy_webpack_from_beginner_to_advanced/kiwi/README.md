@@ -1,10 +1,6 @@
 # Udemy class
 https://paloaltonetworks.udemy.com/course/webpack-from-beginner-to-advanced/learn/lecture/10916988#overview
 
-# repo
-https://github.com/vp-online-courses/webpack-tutorial
-
-
 # npm init
 ```shell
 npm init -y  //to create package.json
@@ -44,5 +40,3 @@ npm run dev   //dev script without css min, and js min to speed up
 
 writeToDisk: true// default is to write file in memory, dist folder is empty
 ```
-# new tool
-https://paloaltonetworks.udemy.com/course/parcel-bundler-the-complete-tutorial/
