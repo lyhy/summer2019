@@ -15,6 +15,7 @@ app.use(express.static('public'))
 // 1. route
 // 2. callback to run if the route is requested
 app.all('/',(req, res)=>{
+    console.log(req.socket.remoteAddress)
     // Express handles the basic headers (status code, mime-type)! Awesome!
     // read in Node.html
     console.log(path.join(__dirname + '/node.html'))
