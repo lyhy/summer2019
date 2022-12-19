@@ -5,6 +5,15 @@ const http = require('http');
 // fs gives node access to THIS computers file system.
 const fs = require('fs');
 
+const Q = require('q');
+
+const fetchData = function() {
+    return Q.promise(function(resolve, reject){
+        // return resolve('<div>Resolved sent out</div>');
+        throw Error('abc')
+    })
+}
+
 // the http module has a createServer method
 // takes 1 arg:
 // 1. callback, callback, has 2 args: req, res
@@ -22,6 +31,19 @@ const server = http.createServer((req, res)=>{
         // 1. status code
         // 2. object for the mime-type
         res.writeHead(200,{'content-type':'text/html'});
+
+        return fetchData().then((ret)=>{
+            console.log(ret);
+            res.writeHead(404,{'content-type':'text/html'});
+            res.write(`<h4>Sorry, this isn't the page you're looking for!</h4>`);
+            res.end();   
+        })
+        // .catch((ret) => {
+        //     console.log(ret);
+        //     res.writeHead(404,{'content-type':'text/html'});
+        //     res.write(`<h4>catched error!</h4>`);
+        //     res.end();    
+        // })
         // res.write('');
         const homePageHTML = fs.readFileSync('node.html')
         res.write(homePageHTML)
