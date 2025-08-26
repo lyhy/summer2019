@@ -1,0 +1,18 @@
+outh2.0
+scalable
+API_Gateway design
+
+Permission:
+Definition of the permission are owned by each service.
+a central repository app role schema is provided for each team to register permission
+api registration
+access control: endpoint
+resource type
+support sub type
+action, rest action, get/list/create/update/delete
+common predefined role
+app predefined role
+custom role
+
+login user different role , owner, readonly
+
